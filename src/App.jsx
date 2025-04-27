@@ -1,8 +1,17 @@
-import { CORE_CONCEPTS } from "./data";
-import Header from "./components/Header";
+import { CORE_CONCEPTS , EXAMPLES  } from "./data";
+import Header from "./components/Header/Header";
 import CoreConcept from "./components/CoreConcept";
+import  TabButton  from "./components/TabButton";
+import {useState} from "react";
 
-function App() {
+function App() 
+{
+  const [selectedButton, setSelectedButton] = useState("components");
+  
+
+  function handleSelect(selectedButton){
+    setSelectedButton(selectedButton);
+  }
   return (
     <div>
      <Header />
@@ -31,6 +40,25 @@ function App() {
 
         </ul>
         </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+          </menu>
+
+        </section>
+        <div id="tab-content">
+          <h3>{EXAMPLES[selectedButton].title}</h3>
+          <p>{EXAMPLES[selectedButton].description}</p>
+          <pre>
+            <code>
+            {EXAMPLES[selectedButton].code}
+            </code>
+          </pre>
+        </div>
       </main>
     </div>
   );

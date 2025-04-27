@@ -1,5 +1,5 @@
-
-import reactImg from "../assets/react-core-concepts.png";
+import './Header.css';
+import reactImg from "../../assets/react-core-concepts.png";
 
 const reactDescriptions=  ["Fundamental", "Core", "Crucial", "Essential", "Basic", "Indispensable", "Necessary", "Required", "Vital", "Key"];
 function genRandomInt(max){
