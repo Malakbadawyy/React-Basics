@@ -19,7 +19,8 @@ function App()
         <section id="core-concepts">
         <h2>Core Concepts</h2>
         <ul>
-          <li>
+          {CORE_CONCEPTS.map((conceptItem)=> <CoreConcept {...conceptItem}/>)}
+          {/* <li>
             <CoreConcept {...CORE_CONCEPTS[0]}/>
           </li>
           <li>
@@ -29,14 +30,14 @@ function App()
           <CoreConcept {...CORE_CONCEPTS[2]}/>
           </li>
 
-          {/* Example of not using destructuring: */}
+          Example of not using destructuring:
           <li>
             <CoreConcept
               title={CORE_CONCEPTS[3].title}
               description={CORE_CONCEPTS[3].description}
               image={CORE_CONCEPTS[3].image}
               />
-          </li>
+          </li> */}
 
         </ul>
         </section>
