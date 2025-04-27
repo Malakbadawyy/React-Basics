@@ -6,7 +6,7 @@ import {useState} from "react";
 
 function App() 
 {
-  const [selectedButton, setSelectedButton] = useState("components");
+  const [selectedButton, setSelectedButton] = useState();
   
 
   function handleSelect(selectedButton){
@@ -50,7 +50,8 @@ function App()
           </menu>
 
         </section>
-        <div id="tab-content">
+          {!selectedButton ? <p>Please select a topic.</p> : null}
+        {selectedButton? <div id="tab-content">
           <h3>{EXAMPLES[selectedButton].title}</h3>
           <p>{EXAMPLES[selectedButton].description}</p>
           <pre>
@@ -58,7 +59,7 @@ function App()
             {EXAMPLES[selectedButton].code}
             </code>
           </pre>
-        </div>
+        </div>: null}
       </main>
     </div>
   );
