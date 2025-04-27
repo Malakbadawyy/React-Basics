@@ -50,8 +50,7 @@ function App()
           </menu>
 
         </section>
-          {!selectedButton ? <p>Please select a topic.</p> : null}
-        {selectedButton? <div id="tab-content">
+          {!selectedButton ? <p>Please select a topic.</p> : <div id="tab-content">
           <h3>{EXAMPLES[selectedButton].title}</h3>
           <p>{EXAMPLES[selectedButton].description}</p>
           <pre>
@@ -59,7 +58,8 @@ function App()
             {EXAMPLES[selectedButton].code}
             </code>
           </pre>
-        </div>: null}
+        </div>}
+      
       </main>
     </div>
   );
